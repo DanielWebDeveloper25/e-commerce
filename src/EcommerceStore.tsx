@@ -590,93 +590,6 @@ export default function EcommerceStore() {
                     </div>
                     <div className="flex justify-between">
                       <button
-                      onClick={() => addToCart(product)}
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition-colors flex items-center space-x-2"
-                    >
-                      <Plus className="w-4 h-4" />
-                      <span>Add to Cart</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {filteredProducts.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
-            </div>
-          )}
-        </div>
-
-        {/* Cart Sidebar */}
-        {showCart && (
-          <div className="w-80 bg-white rounded-lg shadow-md p-6 h-fit sticky top-24">
-            <h2 className="text-xl font-bold mb-4">Shopping Cart</h2>
-            
-            {cart.length === 0 ? (
-              <p className="text-gray-500">Your cart is empty</p>
-            ) : (
-              <>
-                <div className="space-y-4 mb-6">
-                  {cart.map(item => (
-                    <div key={item.id} className="flex items-center space-x-3 border-b pb-3">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-12 h-12 object-cover rounded"
-                      />
-                      <div className="flex-1">
-                        <h4 className="font-medium text-sm line-clamp-1">{item.name}</h4>
-                        <p className="text-green-600 font-semibold">${item.price.toFixed(2)}</p>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <button
-                          onClick={() => updateQuantity(item.id, -1)}
-                          className="p-1 hover:bg-gray-100 rounded"
-                        >
-                          <Minus className="w-4 h-4" />
-                        </button>
-                        <span className="w-8 text-center">{item.quantity}</span>
-                        <button
-                          onClick={() => updateQuantity(item.id, 1)}
-                          className="p-1 hover:bg-gray-100 rounded"
-                        >
-                          <Plus className="w-4 h-4" />
-                        </button>
-                        <button
-                          onClick={() => removeFromCart(item.id)}
-                          className="p-1 hover:bg-red-100 text-red-500 rounded"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="border-t pt-4">
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="font-bold text-lg">Total: ${total.toFixed(2)}</span>
-                  </div>
-                  <button 
-                    onClick={() => {
-                      setShowCart(false);
-                      setShowCheckout(true);
-                    }}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-semibold transition-colors"
-                  >
-                    Proceed to Checkout
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
                         type="button"
                         onClick={() => setShowCheckout(false)}
                         className="text-gray-600 hover:text-gray-800 px-4 py-2"
@@ -803,7 +716,4 @@ export default function EcommerceStore() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-green-600">
-                      ${product.price.toFixed(2)}
-                    </span>
-                    <button
+                    <span className="
