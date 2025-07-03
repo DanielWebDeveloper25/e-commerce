@@ -648,7 +648,6 @@ export default function EcommerceStore() {
                   <User 
                     className="w-6 h-6 cursor-pointer hover:text-orange-400 transition-colors" 
                     onClick={handleLogout}
-                    title="Sign Out"
                   />
                 </div>
               ) : (
@@ -658,7 +657,6 @@ export default function EcommerceStore() {
                     setShowAuthModal(true);
                     setAuthMode('login');
                   }}
-                  title="Sign In"
                 />
               )}
               <button
